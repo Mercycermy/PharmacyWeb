@@ -38,7 +38,7 @@ const Contact = (props) => {
   };
 
   return (
-    <div className="py-14 mb-10 bg-[#f0f7ff]">
+    <div className="py-14 mb-10 bg-[#f0f7ff] ">
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="text-center mb-10">
@@ -213,7 +213,7 @@ const Footer = () => {
         variants={parentVariant}
         whileInView="view"
       >
-        {["&copy; 2024 Pharmacy", "ALL RIGHTS RESERVED"].map((text, index) => (
+        {["&copy; 2024 Empire pharmacy", "ALL RIGHTS RESERVED"].map((text, index) => (
           <motion.p
             className="p-text"
             key={index}

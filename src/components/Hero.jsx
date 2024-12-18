@@ -1,13 +1,14 @@
 import React from "react";
-import HeroImg from "../../assets/hero.png";
+import HeroImg from "../assets/hero.png";
 
 import { motion } from "framer-motion";
-import { SlideRight } from "../../utility/animation";
+import { SlideRight } from "../utility/animation";
+import WhyChooseUs from "./WhyChooseUs";
 
 const Hero = () => {
   return (
     <>
-      <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[650px] relative">
+      <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[650px] w-full relative">
         {/* brand info */}
         <div className="flex flex-col justify-center py-14 md:pr-16 xl:pr-40 md:py-0">
           <div className="text-center md:text-left space-y-6">
@@ -18,14 +19,14 @@ const Hero = () => {
               animate="visible"
               className="text-5xl font-semibold lg:text-6xl !leading-tight"
             >
-              Find Your Perfect
+              Find Your Perfect Health Solution
             </motion.h1>
             <motion.p
               variants={SlideRight(0.8)}
               initial="hidden"
               animate="visible"
             >
-              Welcome to [Your Pharmacy Name], where your health and well-being are our top priorities!
+             Welcome to Empire Pharmacy, where your health and well-being are our top priorities!
             </motion.p>
             {/* button section */}
             <motion.div
@@ -34,7 +35,9 @@ const Hero = () => {
               animate="visible"
               className="flex gap-8 justify-center md:justify-start !mt-8 items-center"
             >
-              <button className="primary-btn">Get Started</button>
+              <button className="primary-btn">
+                
+               <a href="#about">Learn More</a> </button>
               
             </motion.div>
           </div>

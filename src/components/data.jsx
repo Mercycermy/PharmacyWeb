@@ -1,3 +1,5 @@
+import React from 'react';
+
 export const NavbarMenu = [
   {
     id: 1,
@@ -7,21 +9,22 @@ export const NavbarMenu = [
   {
     id: 2,
     title: "About",
-    link: "#",
+    link: "#about",
   },
   {
     id: 3,
     title: "Product",
-    link: "#",
+    link: "#product",
   },
   {
     id: 4,
     title: "F&A Questions",
-    link: "#",
+    link: "#faq",
   },
   {
     id: 5,
     title: "Contact us",
-    link: "#",
+    link: "#contact",
   },
+ 
 ];

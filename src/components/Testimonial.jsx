@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useContext } from "react";
 import Slider from "react-slick";
+import  ThemeContext  from "./contexts/theme";
 
-// Pharmacy Testimonials Data
+
 const TestimonialsData = [
   {
     id: 1,
@@ -64,17 +65,16 @@ const Testimonial = () => {
       },
     ],
   };
-
+  const { themeName } = useContext(ThemeContext);
   return (
-    <div className="py-14 mb-10 bg-[#f0f7ff]">
+    <div className={`py-14 mb-10 ${themeName === 'dark' ? 'bg-gray-800' : 'bg-[#f0f7ff]'}`}>
       <div className="container">
         {/* Header Section */}
         <div className="text-center max-w-[600px] mx-auto mb-8">
-          <h1 className="uppercase text-4xl text-[#0066CC] font-semibold">
+          <h1 className={`uppercase text-4xl ${themeName === 'dark' ? 'text-[#00aaff]' : 'text-[#0066CC]'}`}>
             Our Testimonials
           </h1>
-          
-          <p className="text-2xl font-bold text-gray-800">
+          <p className={`text-2xl font-bold ${themeName === 'dark' ? 'text-gray-200' : 'text-gray-800'}`}>
             What Our Customers Say About Us
           </p>
         </div>
@@ -84,31 +84,25 @@ const Testimonial = () => {
           <Slider {...settings}>
             {TestimonialsData.map((item) => (
               <div key={item.id} className="px-4">
-                <div className="flex flex-col gap-5 p-6 shadow-md rounded-lg bg-white hover:shadow-lg transition-shadow">
-                  {/* Upper Section */}
-                  <div className="flex items-center gap-4">
-                    <img
-                      src={item.img}
-                      alt={item.name}
-                      className="w-16 h-16 rounded-full object-cover"
-                    />
-                    <div>
-                      <p className="text-lg font-bold text-[#0066CC]">
-                        {item.name}
-                      </p>
-                      <p className="text-sm text-gray-500">Satisfied Customer</p>
-                    </div>
-                  </div>
-
-                  {/* Testimonial Text */}
-                  <p className="text-gray-700 text-sm leading-relaxed">
-                    {item.text}
+              <div className={`flex flex-col ${themeName === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-700'} rounded-lg hover:shadow-lg transition-shadow`}>
+                {/* Upper Section - Image */}
+                <div className="flex justify-center">
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="w-32 h-32 rounded-full object-cover mt-6"
+                  />
+                </div>
+                
+                {/* Lower Section - Content */}
+                <div className="p-6">
+                  <p className={`text-lg font-bold ${themeName === 'dark' ? 'text-[#00aaff]' : 'text-[#0066CC]'}`}>
+                    {item.name}
                   </p>
-
-                  {/* Rating */}
-                  <div className="text-[#FFB400] text-lg">⭐⭐⭐⭐⭐</div>
+                  <p className={`text-sm ${themeName === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>{item.text}</p>
                 </div>
               </div>
+            </div>
             ))}
           </Slider>
         </div>

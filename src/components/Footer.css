@@ -1,15 +1,16 @@
 .app__footer {
     width: 100%;
     display: flex;
-    justify-content: space-between !important;
+    justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem 5rem;
     background-color:#0656a7;
   }
   
   @media screen and (max-width: 500px) {
     .app__footer {
       flex-direction: column;
+      padding: 1rem ;
     }
   }
   
@@ -98,5 +99,7 @@
   @media screen and (max-width: 500px) {
     .app__footer-copyrights {
       margin-right: 0;
+      padding: 0px;
+      font-size: 10px;
     }
   }

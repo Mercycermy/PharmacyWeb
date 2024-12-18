@@ -1,32 +1,33 @@
-import React from "react";
-import Navbar from "./components/Navbar/Navbar";
-
-import Hero from "./components/Hero/Hero";
-import WhyChooseUs from "./components/WhyChooseUs/WhyChooseUs";
-
-import SubjectCard from "./components/ProductCard/ProductCard";
-import Testimonial from "./components/Testimonial/Testimonial";
-import Footer from "./components/Footer/Footer";
-import Contact from "./components/Contact/Contact";
-import FAQ from "./components/FAQ/FAQ";
-
-
+import React, { useContext } from "react"; // Import useContext
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import WhyChooseUs from "./components/WhyChooseUs";
+import SubjectCard from "./components/ProductCard";
+import Testimonial from "./components/Testimonial";
+import Footer from "./components/Footer";
+import Contact from "./components/Contact";
+import FAQ from "./components/FAQ";
+import './App.css';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import  ThemeContext  from './components/contexts/theme'; // Import ThemeContext
 
 const App = () => {
+  const { themeName, toggleTheme } = useContext(ThemeContext); // Destructure themeName from ThemeContext
+
   return (
-    <main className="overflow-x-hidden">
-      <Navbar />
-     
-      <Hero />
-     
-      <WhyChooseUs />
-      
-      <SubjectCard />
-      <FAQ/>
-      <Testimonial />
-      <Contact />
-      < Footer/>
-    </main>
+    <div className={`overflow-x-hidden ${themeName} app`}>
+      <Navbar className="navbar" />
+      <main>
+        <Hero />
+        <WhyChooseUs />
+        <SubjectCard />
+        <FAQ />
+        <Testimonial />
+        <Contact />
+      </main>
+      <ScrollToTop />
+      <Footer />
+    </div>
   );
 };
 

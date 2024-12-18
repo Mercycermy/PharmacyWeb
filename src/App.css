@@ -1,0 +1,104 @@
+.app {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.5;
+    color: var(--clr-fg);
+    background-color: var(--clr-bg);
+  }
+  
+  /* Light Theme */
+  .light {
+    --clr-bg: #ffffff; /* White background */
+    --clr-bg-alt: #f0f0f0; /* Light gray for accents */
+    --clr-fg: #000000; /* Black for text */
+    --clr-fg-alt: #555555; /* Dark gray for alternate text */
+    --clr-primary: #007bff; /* Blue for highlights */
+    --clr-secondary: #6c757d; /* Gray for accents */
+    --shadow: rgba(0, 0, 0, 0.1) 0px 7px 29px 0px; /* Light gray shadow */
+  }
+  
+  /* Dark Theme */
+  .dark {
+    --clr-bg: #121212; /* Near black background */
+    --clr-bg-alt: #1e1e1e; /* Dark gray for accents */
+    --clr-fg: #ffffff; /* White for text */
+    --clr-fg-alt: #bbbbbb; /* Light gray for alternate text */
+    --clr-primary: #007bff; /* Blue for highlights */
+    --clr-secondary: #6c757d; /* Gray for accents */
+    --shadow: rgba(0, 0, 0, 0.4) 0px 10px 36px 0px, rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;
+  }
+  
+  main {
+    max-width: 1100px;
+    width: 95%;
+    margin: 0 auto;
+  }
+  
+  .section {
+    margin-top: 5em;
+  }
+  
+  .section__title {
+    text-align: center;
+    margin-bottom: 1em;
+    text-transform: uppercase;
+    color: var(--clr-primary);
+  }
+  
+  .center {
+    display: flex;
+    align-items: center;
+  }
+  
+  .link {
+    color: var(--clr-primary);
+    padding: 0 0 0.3em 0;
+    position: relative;
+    transition: color 0.2s ease-in;
+  }
+  
+  .link:hover {
+    color: var(--clr-secondary);
+  }
+  
+  .link::before {
+    content: '';
+    display: inline;
+    width: 0%;
+    height: 0.2em;
+    position: absolute;
+    bottom: 0;
+    background-color: var(--clr-primary);
+    transition: width 0.2s ease-in;
+  }
+  
+  .link:hover::before,
+  .link:focus::before {
+    width: 100%;
+  }
+  
+  .link--nav {
+    color: var(--clr-fg);
+    text-transform: lowercase;
+    font-weight: 500;
+  }
+  
+  .link--icon {
+    color: var(--clr-fg);
+  }
+  @font-face {
+    font-family: 'Slick';
+    src: url('path/to/your/local/slick-font.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  /* App.css */
+  .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10000; /* Ensure it stays on top of other content */
+    background-color: var(--background-color); /* Ensure it matches your theme */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional for a shadow effect */
+  }
+  
+  
