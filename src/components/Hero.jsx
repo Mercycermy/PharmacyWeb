@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import HeroImg from "../assets/hero.png";
 
 import { motion } from "framer-motion";
 import { SlideRight } from "../utility/animation";
-import WhyChooseUs from "./WhyChooseUs";
+import ThemeContext from "./contexts/theme";
 
 const Hero = () => {
+  const { themeName } = useContext(ThemeContext);
   return (
     <>
       <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[650px] w-full relative">
@@ -13,11 +14,13 @@ const Hero = () => {
         <div className="flex flex-col justify-center py-14 md:pr-16 xl:pr-40 md:py-0">
           <div className="text-center md:text-left space-y-6">
             
-            <motion.h1
+          <motion.h1
               variants={SlideRight(0.6)}
               initial="hidden"
               animate="visible"
-              className="text-5xl font-semibold lg:text-6xl !leading-tight"
+              className={`uppercase font-bold text-3xl lg:text-5xl !leading-tight ${
+                themeName === "dark" ? "text-white" : "text-primary"
+              }`}
             >
               Find Your Perfect Health Solution
             </motion.h1>

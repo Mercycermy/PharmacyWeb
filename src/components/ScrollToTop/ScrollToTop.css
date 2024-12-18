@@ -5,7 +5,7 @@
     background-color: transparent;
   }
   
-  @media (max-width: 500px) {
+  @media (max-width: 300px) {
     .scroll-top {
       display: none;
     }
