@@ -61,7 +61,7 @@ const WhyChooseUs = () => {
       {/* About Us Section */}
       <div className="container py-12">
         <div className="text-center space-y-6 max-w-[700px] mx-auto mb-12">
-          <h1 className={`uppercase font-bold text-3xl ${themeName === 'dark' ? 'text-white' : 'text-primary'}`}>
+          <h1 className={`uppercase font-bold text-3xl ${themeName === 'dark' ? 'text-[#0066CC]' : 'text-primary'}`}>
             About Us
           </h1>
           <p className="text-lg leading-relaxed">
@@ -69,7 +69,7 @@ const WhyChooseUs = () => {
           </p>
           <a
             href="#"
-            className={`inline-flex items-center font-medium hover:underline ${themeName === 'dark' ? 'text-gray-300' : 'text-primary'}`}
+            className={`inline-flex items-center font-medium hover:underline ${themeName === 'dark' ? 'text-gray' : 'text-primary'}`}
           >
             More about us →
           </a>
@@ -77,25 +77,25 @@ const WhyChooseUs = () => {
       </div>
 
       {/* What We Do Section */}
-      <div className="container py-12">
+      <div className=" py-12">
         <div className="space-y-4 text-center mb-8">
-          <h2 className={`font-semibold text-2xl ${themeName === 'dark' ? 'text-white' : 'text-primary'}`}>What We Do</h2>
+          <h2 className={`font-semibold text-2xl ${themeName === 'dark' ? 'text-[#0066CC]' : 'text-primary'}`}>What We Do</h2>
         </div>
-        <div className="flex flex-wrap gap-8">
+        <div className="flex flex-wrap gap-12">
           {PharmacyServices.map((service) => (
             <motion.div
               key={service.id}
               variants={SlideLeft(service.delay)}
               initial="hidden"
               whileInView="visible"
-              className={`w-full flex flex-col sm:flex-row items-center shadow-md rounded-lg overflow-hidden ${themeName === 'dark' ? 'bg-bg-alt text-white' : 'bg-bg-alt text-gray-700'}`}
+              className={`w-full flex flex-col sm:flex-row  shadow-md rounded-lg overflow-hidden ${themeName === 'dark' ? 'bg-bg-alt text-white' : 'bg-bg-alt text-gray-700'}`}
             >
               <img
                 src={service.image}
                 alt={service.title}
-                className="w-full sm:w-1/3 h-[200px] object-contain bg-white"
+                className="w-full sm:w-2/3 h-[300px] object-contain "
               />
-              <div className="p-6 sm:w-2/3 text-center sm:text-left space-y-3">
+              <div className="p-6 sm:w-1/3 text-center sm:text-left space-y-3">
                 <h3 className={`font-bold text-lg ${themeName === 'dark' ? 'text-white' : 'text-primary'}`}>{service.title}</h3>
                 <p className="text-sm">{service.desc}</p>
               </div>
@@ -107,7 +107,7 @@ const WhyChooseUs = () => {
       {/* Why Choose Us Section */}
       <div className="container py-12">
         <div className="space-y-4 text-center mb-8">
-          <h2 className={`font-semibold text-2xl ${themeName === 'dark' ? 'text-white' : 'text-primary'}`}>Why Choose Us?</h2>
+          <h2 className={`font-semibold text-2xl ${themeName === 'dark' ? 'text-[#0066CC]' : 'text-primary'}`}>Why Choose Us?</h2>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {WhyChooseUsServices.map((service) => (

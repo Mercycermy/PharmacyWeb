@@ -10,6 +10,7 @@ import FAQ from "./components/FAQ";
 import './App.css';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import  ThemeContext  from './components/contexts/theme'; // Import ThemeContext
+import Telegram from "./components/ScrollToTop/Telegramicon";
 
 const App = () => {
   const { themeName, toggleTheme } = useContext(ThemeContext); // Destructure themeName from ThemeContext
@@ -25,6 +26,7 @@ const App = () => {
         <Testimonial />
         <Contact />
       </main>
+      <Telegram/>
       <ScrollToTop />
       <Footer />
     </div>

@@ -30,10 +30,10 @@ const FAQ = () => {
   };
 
   return (
-    <div className={`app ${themeName}`} id="faq">
+    <div className={`app ${themeName} mb-12`} id="faq">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h1 className={`uppercase text-4xl ${themeName === 'dark' ? 'text-white' : 'text-primary'}`}>
+          <h1 className={`uppercase text-4xl ${themeName === 'dark' ? 'text-[#0066CC]' : 'text-primary'}`}>
             Frequently Asked Questions
           </h1>
         </div>

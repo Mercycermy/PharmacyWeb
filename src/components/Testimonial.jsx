@@ -6,27 +6,15 @@ import  ThemeContext  from "./contexts/theme";
 const TestimonialsData = [
   {
     id: 1,
-    name: "Jane Doe",
-    text: "The pharmacy's delivery service is outstanding! My prescriptions always arrive on time, and the staff is incredibly helpful and caring.",
+    name: "Mihret Tsegaye",
+    text: "The pharmacy's delivery service is outstanding!, and the staff is incredibly helpful and caring.",
     img: "https://picsum.photos/101/101",
   },
   {
     id: 2,
-    name: "Michael Johnson",
+    name: "Azarias",
     text: "I’ve never experienced such personalized attention at any pharmacy. The pharmacists take the time to answer my questions and guide me.",
     img: "https://picsum.photos/102/102",
-  },
-  {
-    id: 3,
-    name: "Emily Smith",
-    text: "The online ordering system is so convenient! It saves me time, and I appreciate the reminders for refills.",
-    img: "https://picsum.photos/103/103",
-  },
-  {
-    id: 4,
-    name: "David Brown",
-    text: "Exceptional service and quality products. I trust this pharmacy for all my healthcare needs.",
-    img: "https://picsum.photos/104/104",
   },
 ];
 

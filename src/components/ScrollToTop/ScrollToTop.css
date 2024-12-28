@@ -10,3 +10,27 @@
       display: none;
     }
   }
+
+/* Define the floating (bouncing) animation */
+.telegram-icon-floating {
+  animation: floatAndBounce 2s infinite ease-in-out;
+}
+
+/* Keyframe for the floating bounce effect */
+@keyframes floatAndBounce {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

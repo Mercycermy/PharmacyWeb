@@ -16,17 +16,19 @@ const Navbar = () => {
 
   return (
     <>
-     <motion.div
-  className="navbar"
+  <motion.div
+  className={`navbar fixed top-0 left-0 w-full z-50 shadow-md ${
+    themeName === "dark" ? "bg-[#121212] text-white" : "bg-white text-gray-800"
+  }`}
   initial={{ opacity: 0 }}
   animate={{ opacity: 1 }}
   transition={{ duration: 0.5, delay: 0.5 }}
 >
-  <div className="container flex justify-between items-center py-6">
+  <div className="container flex justify-between items-center py-4">
     {/* Logo section */}
     <div className="text-2xl flex items-center gap-2 font-bold">
       <img
-        src={themeName === 'light' ? LightLogo : DarkMode} // replace with your paths to logos
+        src={themeName === 'light' ? LightLogo : DarkMode}
         alt="Logo"
         className="text-4xl text-secondary w-30 h-12" // smaller size
       />
@@ -65,7 +67,6 @@ const Navbar = () => {
     </div>
   </div>
 </motion.div>
-
 
       {/* mobile Sidebar section */}
       <ResponsiveMenu isOpen={isOpen} />
