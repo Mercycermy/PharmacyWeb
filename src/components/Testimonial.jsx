@@ -59,7 +59,7 @@ const Testimonial = () => {
       <div className="container">
         {/* Header Section */}
         <div className="text-center max-w-[600px] mx-auto mb-8">
-          <h1 className={`uppercase text-4xl ${themeName === 'dark' ? 'text-[#00aaff]' : 'text-[#0066CC]'}`}>
+          <h1 className={`uppercase text-4xl ${themeName === 'dark' ? 'text-[#00aaff]' : 'text-[#59D5E0]'}`}>
             Our Testimonials
           </h1>
           <p className={`text-2xl font-bold ${themeName === 'dark' ? 'text-gray-200' : 'text-gray-800'}`}>

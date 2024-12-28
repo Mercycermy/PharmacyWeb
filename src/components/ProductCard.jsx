@@ -70,7 +70,7 @@ const ProductCard = () => {
       <div className="container py-14 md:py-24" id="product">
         {/* Header Section */}
         <div className="space-y-4 p-6 text-center max-w-[600px] mx-auto mb-5">
-        <h1 className={`uppercase text-3xl font-semibold ${themeName === "dark" ? "text-[#0066CC]" : "text-primary-btn"}`}
+        <h1 className={`uppercase text-3xl font-semibold ${themeName === "dark" ? "text-[#0066CC]" : "text-primary"}`}
         >
   Our Pharmacy Products
 </h1>
