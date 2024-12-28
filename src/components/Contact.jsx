@@ -81,13 +81,24 @@ const Contact = (props) => {
             </div>
 
             <div className="flex items-center gap-4">
-              <FaPhone className={`text-${themeName === 'dark' ? 'gray-300' : 'secondary'} text-3xl`} />
-              <p className={`text-${themeName === 'dark' ? 'gray-300' : 'gray-600'}`}>{props.data?.phone || "+251 908 77 99 99"}</p>
-            </div>
-            <div className="flex items-center gap-4">
-              <FaEnvelope className={`text-${themeName === 'dark' ? 'gray-300' : 'secondary'} text-3xl`} />
-              <p className={`text-${themeName === 'dark' ? 'gray-300' : 'gray-600'}`}>{props.data?.email || "birukayalew810@gmail.com"}</p>
-            </div>
+  <FaPhone className={`text-${themeName === 'dark' ? 'gray-300' : 'secondary'} text-3xl`} />
+  <a
+    href={`tel:${props.data?.phone || "+251 908 77 99 99"}`}
+    className={`text-${themeName === 'dark' ? 'gray-300' : 'gray-600'}`}
+  >
+    {props.data?.phone || "+251 908 77 99 99"}
+  </a>
+</div>
+<div className="flex items-center gap-4">
+  <FaEnvelope className={`text-${themeName === 'dark' ? 'gray-300' : 'secondary'} text-3xl`} />
+  <a
+    href={`mailto:${props.data?.email || "birukayalew810@gmail.com"}`}
+    className={`text-${themeName === 'dark' ? 'gray-300' : 'gray-600'}`}
+  >
+    {props.data?.email || "birukayalew810@gmail.com"}
+  </a>
+</div>
+
             <div className="flex items-center gap-4">
               <FaTelegram className={`text-${themeName === 'dark' ? 'gray-300' : 'secondary'} text-3xl`} />
               <a href="https://t.me/Empirepharmacyy" target="_blank" rel="noopener noreferrer" className={`text-${themeName === 'dark' ? 'gray-300' : 'gray-600'}`}>

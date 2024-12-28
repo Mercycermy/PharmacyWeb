@@ -19,7 +19,7 @@ const Hero = () => {
               initial="hidden"
               animate="visible"
               className={`uppercase font-bold text-3xl lg:text-5xl !leading-tight ${
-                themeName === "dark" ? "text-[#0066CC]" : "text-primary"
+                themeName === "dark" ? "text-[#FFCC00]" : "text-primary"
               }`}
             >
               Find Your Perfect Health Solution

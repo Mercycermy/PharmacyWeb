@@ -10,10 +10,10 @@ export const ThemeProvider = ({ children }) => {
     const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
     const updateTheme = (e) => {
-      setThemeName(e.matches ? 'dark' : 'light');
+      setThemeName(e.matches ? 'light' : 'dark');
     };
 
-    setThemeName(darkMediaQuery.matches ? 'dark' : 'light');
+    setThemeName(darkMediaQuery.matches ? 'light' : 'dark');
     darkMediaQuery.addEventListener('change', updateTheme);
 
     return () => {

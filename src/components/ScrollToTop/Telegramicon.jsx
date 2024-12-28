@@ -14,7 +14,6 @@ const TelegramIcon = () => {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
-  // Define the scrollTopStyle inside the component
   const scrollTopStyle = {
     position: "fixed",
     bottom: "350px",
@@ -25,19 +24,21 @@ const TelegramIcon = () => {
 
   return (
     isVisible && (
-        <div className="scroll-top" style={scrollTopStyle}>
-          <a
-            href="https://t.me/Empirepharmacyy"
-            aria-label="Go to Telegram"
-            target="_blank"
-            rel="noreferrer"
-            className="telegram-icon-floating" // Added floating animation class
-          >
-            <TelegramIconMui fontSize="large" style={{ color: "#0088cc" }} />
-          </a>
-        </div>
-      )
-    );
-  };
+      <div className="scroll-top" style={scrollTopStyle}>
+        <a
+          href="https://t.me/Empirepharmacyy"
+          aria-label="Go to Telegram"
+          target="_blank"
+          rel="noreferrer"
+          className="telegram-icon-container"
+        >
+          <div className="telegram-icon-circle">
+            <TelegramIconMui fontSize="large" className="telegram-icon" />
+          </div>
+        </a>
+      </div>
+    )
+  );
+};
 
 export default TelegramIcon;

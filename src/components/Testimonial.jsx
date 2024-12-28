@@ -1,20 +1,20 @@
 import React, { useContext } from "react";
 import Slider from "react-slick";
 import  ThemeContext  from "./contexts/theme";
-
-
+import Azi from "../assets/azi.jpg";
+import Mercy from "../assets/me.jpg";
 const TestimonialsData = [
   {
     id: 1,
     name: "Mihret Tsegaye",
     text: "The pharmacy's delivery service is outstanding!, and the staff is incredibly helpful and caring.",
-    img: "https://picsum.photos/101/101",
+    img: Mercy,
   },
   {
     id: 2,
-    name: "Azarias",
+    name: "Azarias Dessie",
     text: "I’ve never experienced such personalized attention at any pharmacy. The pharmacists take the time to answer my questions and guide me.",
-    img: "https://picsum.photos/102/102",
+    img: Azi,
   },
 ];
 

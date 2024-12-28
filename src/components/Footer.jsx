@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook } from "react-icons/fa";
 import { GrLinkedinOption } from "react-icons/gr";
 import { FaTelegramPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
 import "./Footer.css";
+import  ThemeContext  from "./contexts/theme";
 
-const Footer = () => {
+const Footer = ({}) => {
   const parentVariant = {
     view: {
       opacity: [0, 1],
@@ -44,9 +45,9 @@ const Footer = () => {
       },
     },
   };
-
+  const { themeName } = useContext(ThemeContext);
   return (
-    <div className="app__flex app__footer">
+    <div className={`app__flex app__footer ${themeName === 'dark' ? 'bg-gray-800' : 'bg-[#f0f7ff]'}`}>
       <motion.div
         className="app__footer-contacts app__flex flex-row items-center"
         variants={parentVariant}
@@ -71,7 +72,12 @@ const Footer = () => {
             variants={childSocialVariant}
             whileInView="view"
           >
-            <a href={social.href} target="_blank" rel="noreferrer" className="app__flex text-2xl">
+            <a
+              href={social.href}
+              target="_blank"
+              rel="noreferrer"
+              className={`app__flex text-2xl ${themeName === 'dark' ? 'text-gray-300' : 'text-secondary'}`}
+            >
               {social.icon}
             </a>
           </motion.div>
@@ -85,7 +91,7 @@ const Footer = () => {
       >
         {["&copy; 2024 Empire pharmacy", "ALL RIGHTS RESERVED"].map((text, index) => (
           <motion.p
-            className="p-text"
+            className={`p-text ${themeName === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}
             key={index}
             variants={childCopyVariant}
             whileInView="view"
