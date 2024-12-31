@@ -12,6 +12,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
+  "proxy": "http://localhost:8080",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",

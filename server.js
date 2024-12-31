@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 8080;
 
 // Enable CORS with preflight support
 app.use(cors({
-  origin: 'http://localhost:5173', // Only allow your frontend to make requests
+  origin: '*', // Allow all origins
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify the methods you're allowing
   allowedHeaders: ['Content-Type', 'Authorization'], // Specify which headers are allowed
   credentials: true, // Allow cookies if needed
