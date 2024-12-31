@@ -38,20 +38,23 @@
   animation: fadeIn 0.5s ease-in-out;
 }
 
-.telegram-icon-container {
+/* Telegram and Phone Icon Containers */
+.telegram-icon-container,
+.phone-icon-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70px; /* Increase size */
-  height: 70px; /* Increase size */
-  border: 4px solid #0088cc; /* Stroke color */
+  width: 70px; /* Default size */
+  height: 70px; /* Default size */
+  border: 4px solid #59D5E0; /* Stroke color */
   border-radius: 50%; /* Circular border */
-  background-color: #ffffff; /* Background color inside the circle */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for a polished look */
+  background-color: #ffffff; /* Background color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for polished look */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.telegram-icon-container:hover {
+.telegram-icon-container:hover,
+.phone-icon-container:hover {
   transform: scale(1.1); /* Enlarge on hover */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
 }
@@ -65,17 +68,21 @@
 }
 
 .telegram-icon {
-  color: #0088cc; /* Icon color */
-  font-size: 40px !important; /* Increase icon size */
+  color: #59D5E0; /* Icon color */
+  font-size: 40px !important; /* Icon size */
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+/* Responsive Design */
+@media (max-width: 768px) {
+  .telegram-icon-container,
+  .phone-icon-container {
+    width: 50px; /* Smaller size for phones */
+    height: 50px; /* Smaller size for phones */
+    }
+.phone-icon-container{
+  bottom: 220px;
+}
+  .telegram-icon {
+    font-size: 30px !important; /* Adjust icon size */
   }
 }

@@ -29,15 +29,15 @@ const Contact = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  
+
     const form = e.target;
-  
+
     // If there's an image, append it to the form data
     const formData = new FormData(form);
     if (image) {
       formData.append("image", image);
     }
-  
+
     // Use the form element directly as the third parameter
     emailjs.sendForm("service_g7fj9x1", "template_e04sk69", form, "47W1VeLGBhasjhak1")
       .then(
@@ -50,8 +50,8 @@ const Contact = (props) => {
         }
       );
   };
-  
-  
+
+
 
   return (
     <div className={`py-14 mb-10 ${themeName === 'dark' ? 'bg-gray-800' : 'bg-[#f0f7ff]'}`} id="contact">
@@ -81,23 +81,23 @@ const Contact = (props) => {
             </div>
 
             <div className="flex items-center gap-4">
-  <FaPhone className={`text-${themeName === 'dark' ? 'gray-300' : 'secondary'} text-3xl`} />
-  <a
-    href={`tel:${props.data?.phone || "+251 908 77 99 99"}`}
-    className={`text-${themeName === 'dark' ? 'gray-300' : 'gray-600'}`}
-  >
-    {props.data?.phone || "+251 908 77 99 99"}
-  </a>
-</div>
-<div className="flex items-center gap-4">
-  <FaEnvelope className={`text-${themeName === 'dark' ? 'gray-300' : 'secondary'} text-3xl`} />
-  <a
-    href={`mailto:${props.data?.email || "birukayalew810@gmail.com"}`}
-    className={`text-${themeName === 'dark' ? 'gray-300' : 'gray-600'}`}
-  >
-    {props.data?.email || "birukayalew810@gmail.com"}
-  </a>
-</div>
+              <FaPhone className={`text-${themeName === 'dark' ? 'gray-300' : 'secondary'} text-3xl`} />
+              <a
+                href={`tel:${props.data?.phone || "+251 908 77 99 99"}`}
+                className={`text-${themeName === 'dark' ? 'gray-300' : 'gray-600'}`}
+              >
+                {props.data?.phone || "+251 908 77 99 99"}
+              </a>
+            </div>
+            <div className="flex items-center gap-4">
+              <FaEnvelope className={`text-${themeName === 'dark' ? 'gray-300' : 'secondary'} text-3xl`} />
+              <a
+                href={`mailto:${props.data?.email || "birukayalew810@gmail.com"}`}
+                className={`text-${themeName === 'dark' ? 'gray-300' : 'gray-600'}`}
+              >
+                {props.data?.email || "birukayalew810@gmail.com"}
+              </a>
+            </div>
 
             <div className="flex items-center gap-4">
               <FaTelegram className={`text-${themeName === 'dark' ? 'gray-300' : 'secondary'} text-3xl`} />
@@ -140,9 +140,8 @@ const Contact = (props) => {
                   value={name}
                   onChange={handleChange}
                   required
-                  className={`w-full p-3 border rounded-lg focus:outline-none focus:ring  focus:ring-${themeName === 'dark' ? 'white' : 'gray-300'} ${
-                    themeName === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-black'
-                  }`}
+                  className={`w-full p-3 border rounded-lg focus:outline-none focus:ring  focus:ring-${themeName === 'dark' ? 'white' : 'gray-300'} ${themeName === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-black'
+                    }`}
                 />
               </div>
               <div>
@@ -157,9 +156,8 @@ const Contact = (props) => {
                   value={email}
                   onChange={handleChange}
                   required
-                  className={`w-full p-3 border rounded-lg focus:outline-none focus:ring  focus:ring-${themeName === 'dark' ? 'white' : 'gray-300'} ${
-                    themeName === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-black'
-                  }`}
+                  className={`w-full p-3 border rounded-lg focus:outline-none focus:ring  focus:ring-${themeName === 'dark' ? 'white' : 'gray-300'} ${themeName === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-black'
+                    }`}
                 />
               </div>
               <div>
@@ -174,9 +172,8 @@ const Contact = (props) => {
                   value={message}
                   onChange={handleChange}
                   required
-                  className={`w-full p-3 border rounded-lg focus:outline-none focus:ring focus:ring-${themeName === 'dark' ? 'white' : 'gray-300'} ${
-                    themeName === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-black'
-                  }`}
+                  className={`w-full p-3 border rounded-lg focus:outline-none focus:ring focus:ring-${themeName === 'dark' ? 'white' : 'gray-300'} ${themeName === 'dark' ? 'bg-gray-800 text-white' : 'bg-white text-black'
+                    }`}
                 ></textarea>
               </div>
               <div>
@@ -186,7 +183,7 @@ const Contact = (props) => {
                 <input
                   type="file"
                   id="image"
-                  
+
                   name="image"
                   accept="image/*"
                   onChange={handleFileChange}
