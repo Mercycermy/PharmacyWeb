@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaTelegram, FaFacebook, FaLinkedin, FaTiktok } from "react-icons/fa";
-import ThemeContext from "./contexts/theme"; 
+import ThemeContext from "./contexts/theme";
 
 const initialState = {
   name: "",
@@ -24,35 +24,42 @@ const Contact = (props) => {
   };
 
   const clearState = () => setState({ ...initialState });
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-  
     const formData = new FormData();
-    formData.append("name", name);
-    formData.append("email", email);
-    formData.append("message", message);
-    formData.append("image", image); // Attach the image if any
-  
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('message', message);
+
+    // Only append the image if it's selected
+    if (image) {
+      formData.append('image', image);
+    }
+
     try {
-      const response = await fetch("http://localhost:8080/send", {
-        method: "POST",
-        body: formData, // Send the form data
+      const response = await fetch('http://localhost:8080/send', {
+        method: 'POST',
+        body: formData,
       });
-  
+
+      const result = await response.json();
       if (response.ok) {
-        const data = await response.json();
-        console.log("Email sent successfully", data);
+        console.log('Email sent successfully:', result);
         clearState(); // Clear the form if successful
+        window.alert("Your message has been sent successfully!");
       } else {
-        console.error("Failed to send email");
+        console.error('Failed to send email:', result);
+        window.alert("Failed to send your message. Please try again later.");
       }
     } catch (error) {
-      console.error("Error sending email:", error);
+      console.error('Error sending email:', error);
+      window.alert("An error occurred. Please try again later.");
     }
   };
-  
-  
+
+
+
   return (
     <div className={`py-14 mb-10 ${themeName === 'dark' ? 'bg-gray-800' : 'bg-[#f0f7ff]'}`} id="contact">
       <div className="container mx-auto px-4">

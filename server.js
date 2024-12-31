@@ -16,26 +16,33 @@ const PORT = process.env.PORT || 8080;
 
 // Enable CORS with preflight support
 app.use(cors({
-  origin: '*', // Allow all origins
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify the methods you're allowing
-  allowedHeaders: ['Content-Type', 'Authorization'], // Specify which headers are allowed
-  credentials: true, // Allow cookies if needed
-  preflightContinue: false, // Don't send the response to OPTIONS requests manually
-  optionsSuccessStatus: 200, // For legacy browser support
+  origin: (origin, callback) => {
+    const allowedOrigins = ['http://localhost:5173', 'https://mercycermy.github.io'];
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  preflightContinue: false,
+  optionsSuccessStatus: 200,
 }));
 
 // Set up multer for file upload
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, 'uploads/'); // save the image in the 'uploads' folder
+    cb(null, 'uploads/');
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + path.extname(file.originalname)); // give unique name to the file
+    cb(null, Date.now() + path.extname(file.originalname));
   },
 });
 const upload = multer({
   storage: storage,
-  limits: { fileSize: 5 * 1024 * 1024 }, // Limit to 5 MB
+  limits: { fileSize: 5 * 1024 * 1024 },
 });
 
 const uploadDir = path.join(__dirname, 'uploads');
@@ -62,15 +69,17 @@ const transporter = nodemailer.createTransport({
 // Serve the static folder with images
 app.use(express.static('uploads'));
 
-// Endpoint to send email with image attachment
 app.post('/send', upload.single('image'), (req, res) => {
-  console.log(req.file); // Log the file data to check if it's being uploaded
-  if (!req.file) {
-    return res.status(400).json({ message: 'No file uploaded' });
-  }
+  console.log('Request Body:', req.body);  // Log the form data
+  console.log('Uploaded File:', req.file); // Log the uploaded file (if any)
 
   const { name, email, message } = req.body;
-  const image = req.file;
+  const image = req.file; // image will be undefined if no file is uploaded
+
+  // Check if all required fields are provided
+  if (!name || !email || !message) {
+    return res.status(400).json({ message: 'All fields are required.' });
+  }
 
   const mailOptions = {
     from: `${SENDER} 🐶`,
@@ -82,18 +91,22 @@ app.post('/send', upload.single('image'), (req, res) => {
       <p><strong>Email:</strong> ${email}</p>
       <p><strong>Message:</strong><br /> ${message}</p>
     `,
-    attachments: [
+  };
+
+  // If an image is provided, add it as an attachment
+  if (image) {
+    mailOptions.attachments = [
       {
         filename: image.filename,
         path: path.join(__dirname, 'uploads', image.filename),
-      }
-    ]
-  };
+      },
+    ];
+  }
 
   transporter
     .sendMail(mailOptions)
     .then((resp) => {
-      // Remove uploaded file after email is sent successfully
+      // Remove uploaded file after email is sent successfully, only if image was uploaded
       if (image) fs.unlinkSync(path.join(__dirname, 'uploads', image.filename));
       res.json({ message: 'Email sent successfully!', resp });
     })
