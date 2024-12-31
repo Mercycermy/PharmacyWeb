@@ -6,7 +6,7 @@ import "./ScrollToTop.css";
 const TelegramIcon = () => {
   const TelegramStyle = {
     position: "fixed",
-    bottom: "28%",
+    bottom: "30%",
     right: "20px",
     zIndex: "1000",
     cursor: "pointer",
