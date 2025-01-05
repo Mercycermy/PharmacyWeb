@@ -11,11 +11,13 @@ import './App.css';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import  ThemeContext  from './components/contexts/theme'; // Import ThemeContext
 import Telegram from "./components/ScrollToTop/Telegramicon";
+import { LanguageProvider } from "./components/contexts/LanguageContext";
 
 const App = () => {
   const { themeName, toggleTheme } = useContext(ThemeContext); // Destructure themeName from ThemeContext
 
   return (
+    <LanguageProvider>
     <div className={`overflow-x-hidden ${themeName} app`}>
       <Navbar className="navbar" />
       <main>
@@ -30,6 +32,7 @@ const App = () => {
       <ScrollToTop />
       <Footer />
     </div>
+    </LanguageProvider>
   );
 };
 

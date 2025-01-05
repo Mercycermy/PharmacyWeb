@@ -5,6 +5,8 @@ import { FaTelegramPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
 import "./Footer.css";
 import  ThemeContext  from "./contexts/theme";
+import LanguageContext from "./contexts/LanguageContext";
+
 
 const Footer = ({}) => {
   const parentVariant = {
@@ -46,6 +48,8 @@ const Footer = ({}) => {
     },
   };
   const { themeName } = useContext(ThemeContext);
+  const { languageData, toggleLanguage } = useContext(LanguageContext);
+  const { footer } = languageData;
   return (
     <div className={`app__flex app__footer ${themeName === 'dark' ? 'bg-gray-800' : 'bg-[#f0f7ff]'}`}>
       <motion.div
@@ -89,7 +93,7 @@ const Footer = ({}) => {
         variants={parentVariant}
         whileInView="view"
       >
-        {["&copy; 2024 Empire pharmacy", "ALL RIGHTS RESERVED"].map((text, index) => (
+        {[ footer.title1, footer.title2].map((text, index) => (
           <motion.p
             className={`p-text ${themeName === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}
             key={index}

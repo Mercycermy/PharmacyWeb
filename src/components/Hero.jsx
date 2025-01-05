@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import HeroImg from "../assets/hero.png";
+import LanguageContext from "./contexts/LanguageContext";
+
 
 import { motion } from "framer-motion";
 import { SlideRight } from "../utility/animation";
@@ -7,6 +9,9 @@ import ThemeContext from "./contexts/theme";
 
 const Hero = () => {
   const { themeName } = useContext(ThemeContext);
+  const { languageData, toggleLanguage } = useContext(LanguageContext);
+  const { hero } = languageData;
+
   return (
     <>
       <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[750px] w-full relative">
@@ -22,14 +27,14 @@ const Hero = () => {
                 themeName === "dark" ? "text-[#FFCC00]" : "text-primary"
               }`}
             >
-              Find Your Perfect Health Solution
+              {hero.title1}
             </motion.h1>
             <motion.p
               variants={SlideRight(0.8)}
               initial="hidden"
               animate="visible"
             >
-             Welcome to Empire Pharmacy, where your health and well-being are our top priorities!
+             {hero.title2}
             </motion.p>
             {/* button section */}
             <motion.div
@@ -40,7 +45,7 @@ const Hero = () => {
             >
               <button className="primary-btn">
                 
-               <a href="#about">Learn More</a> </button>
+               <a href="#about">{hero.btnTittle}</a> </button>
               
             </motion.div>
           </div>

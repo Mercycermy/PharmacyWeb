@@ -1,0 +1,221 @@
+{
+    "pharmacyServices": [
+      {
+        "id": "1",
+        "title": "Prescription Delivery",
+        "desc": "Medications delivered to your doorstep for your convenience.",
+        "image":  "Delivery",
+        "delay": "0.3"
+      },
+      {
+        "id": "2",
+        "title": "Health Tracking",
+        "desc": "Tools to monitor your progress for better health outcomes.",
+        "image": "Health",
+        "delay": "0.6"
+      },
+      {
+        "id": "3",
+        "title": "Expert Guidance",
+        "desc": "Consultations from our knowledgeable and licensed pharmacists.",
+        "image": "Expert",
+        "delay": "0.9"
+    }
+    ],
+    "whyChooseUs": [
+      {
+        "id": "1",
+        "delay": "0.3",
+        "title": "Convenience",
+        "desc": "Online orders, secure prescription uploads, and home delivery."
+      },
+      {
+        "id": "2",
+        "delay": "0.6",
+        "title": "Trusted Expertise",
+        "desc": "Reliable care from licensed and professional pharmacists."
+      },
+      {
+        "id": "3",
+        "delay": "0.9",
+        "title": "Community Focus",
+        "desc": "Dedicated to improving lives one step at a time."
+      }
+    ],
+    "aboutUs": {
+      "title": "About Us",
+      "desc": " Welcome to Empire Pharmacy, your trusted partner in health care. For years, we’ve been dedicated to bridging the gap in healthcare by specializing in the provision of hard-to-find and unavailable medications. We are committed to delivering high-quality pharmaceutical care with a focus on affordability and convenience. Our range of services includes health monitoring tools, expert guidance from licensed pharmacists, and personalized care plans tailored to meet your unique needs.",
+      "more": "More about us →",
+      "title1": "What We Do",
+      "title2": "Why Choose Us?"
+    },
+    "TestimonialsData" : [
+      {
+        "id": "1",
+        "name": "Mihret Tsegaye",
+        "text": "The pharmacy's delivery service is outstanding!, and the staff is incredibly helpful and caring.",
+        "img": "Mercy"
+      },
+      {
+        "id": "2",
+        "name": "Azarias Dessie",
+        "text": "I’ve never experienced such personalized attention at any pharmacy. The pharmacists take the time to answer my questions and guide me.",
+        "img": "Azi"
+      }
+    ],
+    "Testimonial":{
+      "title1":"Our Testimonials",
+      "title2":"What Our Customers Say About Us"
+    },
+    "home":{
+      "homeLink":"Home",
+      "aboutLink":"About Us",
+      "productLink":"Products",
+      "faqLink":"F&A Questions",
+      "contactLink":"Contact Us"
+    },
+    "NavbarMenu" : [
+      {
+        "id": "1",
+        "title": "Home",
+        "link": "/"
+      },
+      {
+        "id": "2",
+        "title": "About",
+        "link": "#about"
+      },
+      {
+        "id": "3",
+        "title": "Product",
+        "link": "#product"
+      },
+      {
+        "id": "4",
+        "title": "F&A Questions",
+        "link": "#faq"
+      },
+      {
+        "id": "5",
+        "title": "Contact us",
+        "link": "#contact"
+      }
+     
+    ],
+ "productList": [
+  {
+    "id": "1",
+    "name": "Pain Relief",
+    "icon": "FaPills",
+    "color": "#ff6b6b",
+    "delay": "0.2"
+  },
+  {
+    "id": "2",
+    "name": "Vitamins & Supplements",
+    "icon": "FaCapsules",
+    "color": "#ffa502",
+    "delay": "0.3"
+  },
+  {
+    "id": "3",
+    "name": "First Aid",
+    "icon": "FaSyringe",
+    "color": "#1e90ff",
+    "delay": "0.4"
+  },
+  {
+    "id": "4",
+    "name": "Heart Care",
+    "icon": "FaHeart",
+    "color": "#ff4757",
+    "delay": "0.5"
+  },
+  {
+    "id": "5",
+    "name": "Prescription Medicines",
+    "icon": "FaNotesMedical",
+    "color": "#3742fa",
+    "delay": "0.6"
+  },
+  {
+    "id": "6",
+    "name": "Cold & Flu",
+    "icon": "FaTablets",
+    "color": "#2ed573",
+    "delay": "0.7"
+  },
+  {
+    "id": "7",
+    "name": "Skincare & Wellness",
+    "icon": "FaPlusSquare",
+    "color": "#eccc68",
+    "delay": "0.8"
+  },
+  {
+    "id": "8",
+    "name": "See All Products",
+    "icon": "FaPlusSquare",
+    "color": "#2f3542",
+    "delay": "0.9"
+  }
+],
+"Product":{
+  "title1":"Our Pharmacy Products",
+  "title2":"Find the Right Products for Your Health"
+},
+"hero":{
+  "title1":"Find Your Perfect Health Solution",
+  "title2":"Welcome to Empire Pharmacy, where your health and well-being are our top priorities!",
+  "btnTittle":"Learn More"
+},
+"footer":{
+  "title1":"&copy; 2024 Empire pharmacy",
+  "title2":"ALL RIGHTS RESERVED"
+},
+"faq":[
+  {
+    "id": 1,
+    "question": "What services do you offer?",
+    "answer": "We offer prescription delivery, health tracking, and expert guidance."
+  },
+  {
+    "id": 2,
+    "question": "How do I track my order?",
+    "answer": "You can track your order status via the tracking link sent to your email after purchase."
+  },
+  {
+    "id": 3,
+    "question": "Can I return medications?",
+    "answer": "Yes, we accept returns within 30 days for unopened and unused medications."
+  }
+],
+"faqTitle":{
+  "title":" Frequently Asked Questions"
+},
+"contact": {
+      "title": "Contact Us",
+      "description": "Please fill out the form below to reach us, and we will respond as quickly as possible.",
+        "nameLabel": "Name",
+        "namePlaceholder": "Enter your name",
+        "emailLabel": "Email",
+        "emailPlaceholder": "Enter your email",
+        "messageLabel": "Message",
+        "messagePlaceholder": "Your message here",
+        "imageLabel": "Attach Image",
+        "submitButton": "Send Message",
+      "address": "Empire pharmacy- 22, Addis Ababa, Ethiopia",
+      "phone": "+251 908 77 99 99",
+      "email": "birukayalew810@gmail.com",
+      "telegram": "Telegram",
+      "linkedin": "LinkedIn",
+      "facebook": "Facebook",
+      "tiktok": "TikTok"
+    },
+    "language":{
+      "ln":"አማርኛ"
+    }
+
+
+  }
+  

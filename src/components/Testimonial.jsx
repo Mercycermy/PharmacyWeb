@@ -3,21 +3,17 @@ import Slider from "react-slick";
 import  ThemeContext  from "./contexts/theme";
 import Azi from "../assets/azi.jpg";
 import Mercy from "../assets/me.jpg";
-const TestimonialsData = [
-  {
-    id: 1,
-    name: "Mihret Tsegaye",
-    text: "The pharmacy's delivery service is outstanding!, and the staff is incredibly helpful and caring.",
-    img: Mercy,
-  },
-  {
-    id: 2,
-    name: "Azarias Dessie",
-    text: "I’ve never experienced such personalized attention at any pharmacy. The pharmacists take the time to answer my questions and guide me.",
-    img: Azi,
-  },
-];
-
+import LanguageContext from "./contexts/LanguageContext";
+const getImage = (imageName) => {
+  switch (imageName) {
+    case 'Azi':
+      return Azi;
+    case 'Mercy':
+      return Mercy;
+    default:
+      return null; // Default case if no matching image is found
+  }
+};
 const Testimonial = () => {
   const settings = {
     dots: true,
@@ -53,6 +49,8 @@ const Testimonial = () => {
       },
     ],
   };
+  const { languageData } = useContext(LanguageContext);
+  const {TestimonialsData, Testimonial } = languageData;
   const { themeName } = useContext(ThemeContext);
   return (
     <div className={`py-14 mb-10 ${themeName === 'dark' ? 'bg-gray-800' : 'bg-[#f0f7ff]'}`}>
@@ -60,23 +58,23 @@ const Testimonial = () => {
         {/* Header Section */}
         <div className="text-center max-w-[600px] mx-auto mb-8">
           <h1 className={`uppercase text-4xl ${themeName === 'dark' ? 'text-[#00aaff]' : 'text-[#59D5E0]'}`}>
-            Our Testimonials
+          {Testimonial.title1}
           </h1>
           <p className={`text-2xl font-bold ${themeName === 'dark' ? 'text-gray-200' : 'text-gray-800'}`}>
-            What Our Customers Say About Us
+          {Testimonial.title2}
           </p>
         </div>
 
         {/* Testimonial Slider Section */}
         <div>
           <Slider {...settings}>
-            {TestimonialsData.map((item) => (
+            {TestimonialsData.map((item, index ) => (
               <div key={item.id} className="px-4">
               <div className={`flex flex-col ${themeName === 'dark' ? 'bg-gray-900 text-white' : 'bg-white text-gray-700'} rounded-lg hover:shadow-lg transition-shadow`}>
                 {/* Upper Section - Image */}
                 <div className="flex justify-center">
                   <img
-                    src={item.img}
+                    src={getImage(item.img)}
                     alt={item.name}
                     className="w-32 h-32 rounded-full object-cover mt-6"
                   />

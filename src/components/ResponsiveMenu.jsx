@@ -1,11 +1,12 @@
 import React, { useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import WbSunnyRoundedIcon from '@mui/icons-material/WbSunnyRounded';
-import Brightness2Icon from '@mui/icons-material/Brightness2';
+import LanguageContext from "./contexts/LanguageContext";
 import ThemeContext from './contexts/theme'; // Correctly import the ThemeContext
 
 const ResponsiveMenu = ({ isOpen, toggleTheme }) => {
   const { themeName } = useContext(ThemeContext); // Destructure properly
+  const { languageData } = useContext(LanguageContext);
+  const { home } = languageData;
 
   return (
     <AnimatePresence mode="wait">
@@ -19,11 +20,11 @@ const ResponsiveMenu = ({ isOpen, toggleTheme }) => {
         >
           <div className="text-xl font-semibold uppercase bg-primary text-black py-10 m-6 rounded-3xl">
             <ul className="flex flex-col justify-center items-center gap-10">
-            <li><a href="/">Home</a></li>
-              <li><a href="#about"  className="page-scroll">About</a></li>
-              <li><a href="#product"  className="page-scroll">Product</a></li>
-              <li><a href="#faq"  className="page-scroll">F&A Questions</a></li>
-              <li><a href="#contact"  className="page-scroll">Contact</a></li>
+            <li><a href="/">{home.homeLink}</a></li>
+              <li><a href="#about"  className="page-scroll">{home.aboutLink}</a></li>
+              <li><a href="#product"  className="page-scroll">{home.productLink}</a></li>
+              <li><a href="#faq"  className="page-scroll">{home.faqLink}</a></li>
+              <li><a href="#contact"  className="page-scroll">{home.contactLink}</a></li>
             </ul>
            
           </div>

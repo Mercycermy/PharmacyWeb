@@ -2,24 +2,8 @@ import React, { useState, useContext } from "react";
 import { motion } from "framer-motion";
 import { FaQuestionCircle } from "react-icons/fa";
 import  ThemeContext  from "./contexts/theme"; // Assuming you have a ThemeContext
+import LanguageContext from "./contexts/LanguageContext";
 
-const FAQData = [
-  {
-    id: 1,
-    question: "What services do you offer?",
-    answer: "We offer prescription delivery, health tracking, and expert guidance.",
-  },
-  {
-    id: 2,
-    question: "How do I track my order?",
-    answer: "You can track your order status via the tracking link sent to your email after purchase.",
-  },
-  {
-    id: 3,
-    question: "Can I return medications?",
-    answer: "Yes, we accept returns within 30 days for unopened and unused medications.",
-  },
-];
 
 const FAQ = () => {
   const { themeName } = useContext(ThemeContext);
@@ -28,17 +12,18 @@ const FAQ = () => {
   const toggleExpanded = (id) => {
     setExpanded(expanded === id ? null : id);
   };
-
+  const { languageData, toggleLanguage } = useContext(LanguageContext);
+  const {faq, faqTitle } = languageData;
   return (
     <div className={`app ${themeName} mb-12`} id="faq">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h1 className={`uppercase text-4xl ${themeName === 'dark' ? 'text-[#0066CC]' : 'text-primary'}`}>
-            Frequently Asked Questions
+            {faqTitle.title}
           </h1>
         </div>
         <div className="space-y-4">
-          {FAQData.map((item) => (
+          {faq.map((item) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0 }}
