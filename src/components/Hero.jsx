@@ -9,14 +9,14 @@ import ThemeContext from "./contexts/theme";
 
 const Hero = () => {
   const { themeName } = useContext(ThemeContext);
-  const { languageData, toggleLanguage } = useContext(LanguageContext);
+  const { languageData } = useContext(LanguageContext);
   const { hero } = languageData;
 
   return (
     <>
       <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[750px] w-full relative">
         {/* brand info */}
-        <div className="flex flex-col justify-center py-14 md:pr-16 xl:pr-40 md:py-0">
+        <div className="flex flex-col justify-center py-14 md:pr-16 xl:pr-40 md:py-0" id="home">
           <div className="text-center md:text-left space-y-6">
             
           <motion.h1

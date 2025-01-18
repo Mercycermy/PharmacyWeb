@@ -1,14 +1,13 @@
 import React, { useContext } from "react";
-import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaFacebook } from "react-icons/fa";
+import { FaMapMarkerAlt, FaFacebook } from "react-icons/fa";
 import { GrLinkedinOption } from "react-icons/gr";
 import { FaTelegramPlane } from "react-icons/fa";
 import { motion } from "framer-motion";
 import "./Footer.css";
-import  ThemeContext  from "./contexts/theme";
+import ThemeContext from "./contexts/theme";
 import LanguageContext from "./contexts/LanguageContext";
 
-
-const Footer = ({}) => {
+const Footer = () => {
   const parentVariant = {
     view: {
       opacity: [0, 1],
@@ -47,29 +46,37 @@ const Footer = ({}) => {
       },
     },
   };
+
   const { themeName } = useContext(ThemeContext);
-  const { languageData, toggleLanguage } = useContext(LanguageContext);
+  const { languageData } = useContext(LanguageContext);
   const { footer } = languageData;
+
   return (
     <div className={`app__flex app__footer ${themeName === 'dark' ? 'bg-gray-800' : 'bg-[#f0f7ff]'}`}>
+      {/* Social Links */}
       <motion.div
         className="app__footer-contacts app__flex flex-row items-center"
         variants={parentVariant}
         whileInView="view"
       >
-        {[{
-          href: "https://www.linkedin.com/in/empire-health-care-b0783a343?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-          icon: <GrLinkedinOption />,
-        }, {
-          href: "https://t.me/Empirepharmacyy",
-          icon: <FaTelegramPlane />,
-        }, {
-          href: "https://www.facebook.com/profile.php?id=61571042468592&mibextid=ZbWKwL",
-          icon: <FaFacebook />,
-        }, {
-          href: "https://maps.app.goo.gl/u8rrdEj1sA4bdXpo8",
-          icon: <FaMapMarkerAlt />,
-        }].map((social, index) => (
+        {[
+          {
+            href: "https://www.linkedin.com/in/empire-health-care-b0783a343?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+            icon: <GrLinkedinOption />,
+          },
+          {
+            href: "https://t.me/Empirepharmacyy",
+            icon: <FaTelegramPlane />,
+          },
+          {
+            href: "https://www.facebook.com/profile.php?id=61571042468592&mibextid=ZbWKwL",
+            icon: <FaFacebook />,
+          },
+          {
+            href: "https://maps.app.goo.gl/u8rrdEj1sA4bdXpo8",
+            icon: <FaMapMarkerAlt />,
+          },
+        ].map((social, index) => (
           <motion.div
             className="app__flex mb-4"
             key={index}
@@ -88,12 +95,29 @@ const Footer = ({}) => {
         ))}
       </motion.div>
 
+      {/* Privacy Policy and Developed by Helix Links */}
+      <motion.div
+        className="app__footer-links app__flex flex-col items-center"
+        variants={parentVariant}
+        whileInView="view"
+      >
+        <motion.a
+          href="/PharmacyWeb/privacypolicy"
+          className={`p-text ${themeName === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}
+          variants={childCopyVariant}
+          whileInView="view"
+        >
+          Privacy Policy
+        </motion.a>
+      </motion.div>
+
+      {/* Footer Copy */}
       <motion.div
         className="app__footer-copyrights"
         variants={parentVariant}
         whileInView="view"
       >
-        {[ footer.title1, footer.title2].map((text, index) => (
+        {[footer.title1, footer.title2].map((text, index) => (
           <motion.p
             className={`p-text ${themeName === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}
             key={index}

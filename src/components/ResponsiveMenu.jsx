@@ -1,10 +1,11 @@
-import React, { useContext } from 'react';
+import React,  { useContext } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { motion, AnimatePresence } from 'framer-motion';
 import LanguageContext from "./contexts/LanguageContext";
-import ThemeContext from './contexts/theme'; // Correctly import the ThemeContext
+import ThemeContext from './contexts/theme';
 
-const ResponsiveMenu = ({ isOpen, toggleTheme }) => {
-  const { themeName } = useContext(ThemeContext); // Destructure properly
+const ResponsiveMenu = ({ isOpen }) => {
+  const { themeName } = useContext(ThemeContext);
   const { languageData } = useContext(LanguageContext);
   const { home } = languageData;
 
@@ -20,13 +21,12 @@ const ResponsiveMenu = ({ isOpen, toggleTheme }) => {
         >
           <div className="text-xl font-semibold uppercase bg-primary text-black py-10 m-6 rounded-3xl">
             <ul className="flex flex-col justify-center items-center gap-10">
-            <li><a href="/">{home.homeLink}</a></li>
-              <li><a href="#about"  className="page-scroll">{home.aboutLink}</a></li>
-              <li><a href="#product"  className="page-scroll">{home.productLink}</a></li>
-              <li><a href="#faq"  className="page-scroll">{home.faqLink}</a></li>
-              <li><a href="#contact"  className="page-scroll">{home.contactLink}</a></li>
+              <li><Link to="/" className="page-scroll">{home.homeLink}</Link></li>
+              <li><Link to="#about" className="page-scroll">{home.aboutLink}</Link></li>
+              <li><Link to="#product" className="page-scroll">{home.productLink}</Link></li>
+              <li><Link to="#faq" className="page-scroll">{home.faqLink}</Link></li>
+              <li><Link to="#contact" className="page-scroll">{home.contactLink}</Link></li> {/* Correct link */}
             </ul>
-           
           </div>
         </motion.div>
       )}
