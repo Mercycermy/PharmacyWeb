@@ -13,15 +13,14 @@ import PrivacyPolicy from "./components/PrivacyPolicy";
 import ThemeContext from './components/contexts/theme';
 import Telegram from "./components/ScrollToTop/Telegramicon";
 import { LanguageProvider } from "./components/contexts/LanguageContext";
-
+import "./App.css";
 const App = () => {
   const { themeName } = useContext(ThemeContext);
 
   return (
     <LanguageProvider>
-      <div className={`overflow-x-hidden ${themeName} app`}>
+      <div className={`app ${themeName}`}  id="top">
         <Router basename="/PharmacyWeb"> {/* Set base URL */}
-          <main>
             <Routes>
               <Route path="/" element={
                 <>
@@ -37,7 +36,6 @@ const App = () => {
               } />
               <Route path="/privacypolicy" element={<PrivacyPolicy />} />
             </Routes>
-          </main>
           <Telegram />
           <ScrollToTop />
         </Router>
