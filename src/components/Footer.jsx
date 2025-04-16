@@ -102,7 +102,7 @@ const Footer = () => {
         whileInView="view"
       >
         <motion.a
-          href="/PharmacyWeb/privacypolicy"
+          href="/privacypolicy"
           className={`p-text ${themeName === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}
           variants={childCopyVariant}
           whileInView="view"

@@ -20,7 +20,7 @@ const App = () => {
   return (
     <LanguageProvider>
       <div className={`app ${themeName}`}  id="top">
-        <Router basename="/PharmacyWeb"> {/* Set base URL */}
+        <Router > {/* Set base URL */}
             <Routes>
               <Route path="/" element={
                 <>
