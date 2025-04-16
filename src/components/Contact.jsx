@@ -39,7 +39,7 @@ const Contact = (props) => {
     }
 
     try {
-      const response = await fetch('https://myproject-ales.onrender.com/send/',  {
+      const response = await fetch('https://myprojectemailsender.onrender.com/send/',  {
         method: 'POST',
         body: formData,
       });
