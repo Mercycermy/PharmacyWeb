@@ -6,7 +6,6 @@ export default {
       colors: {
         primary: "#59D5E0",   // Deep Blue for buttons, headings
         secondary: "#0066CC", // Light Cyan for accents or highlights
-        
       },
       container: {
         center: true,

@@ -14,7 +14,7 @@ const Hero = () => {
 
   return (
     <>
-      <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[750px] w-full relative">
+      <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[750px] w-full relative overflow-hidden">
         {/* brand info */}
         <div className="flex flex-col justify-center py-14 md:pr-16 xl:pr-40 md:py-0" id="home">
           <div className="text-center md:text-left space-y-6">

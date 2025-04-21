@@ -25,7 +25,7 @@ const Navbar = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       >
-        <div className="container flex justify-between items-center py-4">
+        <div className="container max-w-screen mx-auto flex justify-between items-center py-4">
           {/* Logo */}
           <div className="text-2xl flex items-center gap-2 font-bold">
             <img
